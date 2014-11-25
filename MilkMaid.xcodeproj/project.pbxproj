@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* MilkMaidAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* MilkMaidAppDelegate.m */; };
+		58A2AE581A0399A0000E517A /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A2AE571A0399A0000E517A /* BWToolkitFramework.framework */; };
+		58A2AE591A0399A0000E517A /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A2AE571A0399A0000E517A /* BWToolkitFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		762EAA2B113ACB8E0093921D /* MilkMaidWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762EAA2A113ACB8E0093921D /* MilkMaidWindowController.m */; };
 		762EAB05113AD8FF0093921D /* MilkMaid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762EAB04113AD8FF0093921D /* MilkMaid.xib */; };
 		76646D501147F28C00803310 /* icon_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 76646D4E1147F28C00803310 /* icon_main.png */; };
@@ -34,8 +36,6 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		B8751E22188DBE9E00CE5CB0 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8751E21188DBE9E00CE5CB0 /* BWToolkitFramework.framework */; };
-		B8751E23188DBFFA00CE5CB0 /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B8751E21188DBE9E00CE5CB0 /* BWToolkitFramework.framework */; };
 		C9041E77111280A200D0C6A3 /* RTMHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9041E76111280A200D0C6A3 /* RTMHelper.m */; };
 		C927F87B1120FC1B00EA191B /* rtm2.icns in Resources */ = {isa = PBXBuildFile; fileRef = C927F87A1120FC1B00EA191B /* rtm2.icns */; };
 		C9A02F2C111BF11F00ACBFE1 /* NSDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A02F2A111BF11F00ACBFE1 /* NSDateHelper.m */; };
@@ -58,7 +58,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				76FD5BDD11415BA2004C2E10 /* Sparkle.framework in CopyFiles */,
-				B8751E23188DBFFA00CE5CB0 /* BWToolkitFramework.framework in CopyFiles */,
+				58A2AE591A0399A0000E517A /* BWToolkitFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +75,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		58A2AE571A0399A0000E517A /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = ../BWToolkit/BWToolkitFramework.framework; sourceTree = "<group>"; };
 		761FD26D1129B7CE00A06E9B /* MilkMaid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilkMaid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		762EAA29113ACB8E0093921D /* MilkMaidWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MilkMaidWindowController.h; sourceTree = "<group>"; };
 		762EAA2A113ACB8E0093921D /* MilkMaidWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MilkMaidWindowController.m; sourceTree = "<group>"; };
@@ -138,7 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				B8751E22188DBE9E00CE5CB0 /* BWToolkitFramework.framework in Frameworks */,
+				58A2AE581A0399A0000E517A /* BWToolkitFramework.framework in Frameworks */,
 				76FD5BB611415A04004C2E10 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +187,7 @@
 		29B97314FDCFA39411CA2CEA /* MilkMaid */ = {
 			isa = PBXGroup;
 			children = (
+				58A2AE571A0399A0000E517A /* BWToolkitFramework.framework */,
 				080E96DDFE201D6D7F000001 /* App */,
 				7604DB211145587A0090AB22 /* Controls */,
 				7604DB201145585F0090AB22 /* Controllers */,
@@ -448,6 +450,7 @@
 					"\\\"$(SRCROOT)/../../../lib/BWToolkit\\\"",
 					"$(SRCROOT)",
 					/Users/martijnv/Downloads/BWToolkit,
+					/Users/blitz/Workspace/Xcode/BWToolkit,
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -457,6 +460,7 @@
 				GCC_PREFIX_HEADER = MilkMaid_Prefix.pch;
 				INFOPLIST_FILE = "MilkMaid-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = MilkMaid;
 			};
 			name = Debug;
@@ -472,12 +476,14 @@
 					"\\\"$(SRCROOT)/../../../lib/BWToolkit\\\"",
 					"$(SRCROOT)",
 					/Users/martijnv/Downloads/BWToolkit,
+					/Users/blitz/Workspace/Xcode/BWToolkit,
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MilkMaid_Prefix.pch;
 				INFOPLIST_FILE = "MilkMaid-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = MilkMaid;
 			};
 			name = Release;

@@ -183,6 +183,13 @@
 	for (NSDictionary *task in tasks) {
 		[self addGlobalTags:[task objectForKey:@"tags"]];
 	}
+    // sorting of the array with priority
+    [tasks sortUsingComparator:^(NSDictionary *task1, NSDictionary *task2){
+        NSString *pri1 = [task1 objectForKey:@"priority"];
+        NSString *pri2 = [task2 objectForKey:@"priority"];
+        return [pri1 caseInsensitiveCompare:pri2];
+        
+    }] ;
 	[taskTable reloadData];
 	
 }
@@ -304,13 +311,25 @@
 	if (currentList.addAttributes)
 		task = [NSString stringWithFormat:@"%@ %@", task, currentList.addAttributes];
 	
-	NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:timeline, task, @"1", nil] 
+	NSMutableDictionary *orgParams = [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:timeline, task, @"1", nil]
 																	   forKeys:[NSArray arrayWithObjects:@"timeline", @"name", @"parse", nil]];
+    NSMutableDictionary *params = [orgParams mutableCopy];
 	if (currentList.addParams) {
 		[params addEntriesFromDictionary:currentList.addParams];
 	}
-	[rtmController dataByCallingMethod:@"rtm.tasks.add" andParameters:params withToken:YES];
-	
+    NSDictionary * returnValues= [rtmController dataByCallingMethod:@"rtm.tasks.add" andParameters:params withToken:YES];
+    NSDictionary* error = [returnValues objectForKey:@"err"];
+    if (error ) {
+        // we have an error!
+        if ([(NSString*)[error valueForKey:@"code"] isEqualToString:@"4020"]) {
+            //this is the error code used for  @"Cannot add task to a Smart List.", hence we need to kill the list add
+            NSDictionary * secondReturn= [rtmController dataByCallingMethod:@"rtm.tasks.add" andParameters:orgParams withToken:YES];
+            NSDictionary* error2 = [secondReturn objectForKey:@"err"];
+            if (error2) {
+                NSLog(@"Error 2: %@",error2);
+            }
+        }
+    }
 	[self getTasks];
 	[pool release];
 	[progress setHidden:YES];
